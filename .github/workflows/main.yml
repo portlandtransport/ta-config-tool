@@ -17,16 +17,17 @@ jobs:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+     - name: 🚚 Get latest code
+       uses: actions/checkout@v2
          
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      env:
+     - name: FTP-Deploy-Action
+       uses: SamKirkland/FTP-Deploy-Action@2.0.0
+       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         SERVER-DIR: /home/portlandtranspor/dummy-deploy
-        LOCAL_DIR: ./
+        LOCAL_DIR: ./js/
         METHOD: sftp
         PORT: 22
         ARGS: --delete
