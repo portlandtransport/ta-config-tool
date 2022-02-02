@@ -30,4 +30,3 @@ jobs:
         LOCAL_DIR: ./js/
         METHOD: sftp
         PORT: 22
-        ARGS: --delete
