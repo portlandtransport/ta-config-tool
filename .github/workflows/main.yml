@@ -26,7 +26,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/portlandtranspor/dummy-deploy
+        server-dir: /home/portlandtranspor/dummy-deploy/
         local-dir: ./js/
         protocol: ftps
         port: 22
