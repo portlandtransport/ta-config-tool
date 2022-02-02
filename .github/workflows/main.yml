@@ -28,7 +28,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /home/portlandtranspor/dummy-deploy/
         local-dir: ./js/
-        protocol: sftp
+        protocol: ftps-legacy
         port: 22
         
     
