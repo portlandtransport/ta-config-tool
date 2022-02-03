@@ -24,7 +24,7 @@ SOFTWARE.
 
 
 import { initializeApp} from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js';
-import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signInWithPopup, signInWithRedirect, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js';
 import { getDocs, getFirestore, collection, getDoc, doc, setDoc, query, where, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js';
 
 const firbaseApp = initializeApp(ta_config_ui_firebase_credentials);
@@ -47,7 +47,8 @@ onAuthStateChanged(auth, user => {
     } else {
         // console.log('No user');
         $('#accordion').css("display", "none");
-        signInWithPopup(auth, provider);
+        signInWithRedirect(auth, provider);
+        // signInWithPopup(auth, provider);
     }
 });
 
