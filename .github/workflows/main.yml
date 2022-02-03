@@ -13,22 +13,23 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+
+jobs:
+  upload_files:
     runs-on: ubuntu-latest
+    name: Upload a builded file.
     steps:
-     - name: 🚚 Get latest code
-       uses: actions/checkout@v2
-         
-     - name: FTP-Deploy-Action
-       uses: SamKirkland/FTP-Deploy-Action@4.2.0
-       with:
-        server: ${{ secrets.FTP_SERVER }}
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Upload Files
+      id: upload
+      uses: Creepios/sftp-action@v1.0.3
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        port: 22
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/portlandtranspor/dummy-deploy/
-        local-dir: ./js/
-        protocol: ftps-legacy
-        port: 22
+        localPath: ./js/
+        remotePath: /home/portlandtranspor/dummy-deploy/
         
     
