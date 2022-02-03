@@ -15,7 +15,7 @@ on:
 jobs:
   upload_files:
     runs-on: ubuntu-latest
-    name: Upload a builded file.
+    name: Upload web file system
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         port: 22
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localPath: ./js/
-        remotePath: /home/portlandtranspor/dummy-deploy/
+        localPath: ./content/
+        remotePath: /home/portlandtranspor/newconfigs/
         
     
