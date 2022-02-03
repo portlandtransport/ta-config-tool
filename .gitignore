@@ -1,5 +1,5 @@
 # ignore firebase credentials
-js/firebase-credentials.js
+content/js/firebase-credentials.js
 
 # ignore log files and databases
 *.log
