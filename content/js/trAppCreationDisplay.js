@@ -111,6 +111,15 @@ function trAppDisplayMyAppliances() {
 			document.tag = tag;
 			trAppDisplayFilter(tag);
 		});
+	    var tag = $("#filter_field").val();
+		if (tag == undefined) {
+			tag = "";
+		}
+		if (tag != "") {
+		    document.tag = tag;
+		    trAppDisplayFilter(tag);
+		}
+		
 	}).catch(function(error) {
 		$("#main_content").html("Sorry, we could not retrieve your Transit Appliance configurations. Error information:<p>"+error);
 	});
