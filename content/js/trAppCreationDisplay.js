@@ -76,9 +76,7 @@ function trAppDisplayMyAppliances() {
 			return_html += "<table border='1' class='transparent_table'><tr valign='top'><td class='transparent_table'><table><tr><th>Appliance</th><th>Street Address</th></tr>\n";
 			$(rows).each(function(index,return_data) {
 				//console.log(return_data);
-				var hw_id = trAppHardwareId(return_data.value.private.id);
-
-				window.trAppNameCache[return_data.value.private.id] = nickname;
+				var hw_id = trAppHardwareId(return_data.value.private.id);				
 				
 				var edit_string = "<a href=\"javascript:trAppLoadApplianceConfig('"+return_data.value.private.id+"'); trAppActivateTab( 2 );\">edit</a> | <a target=\"_blank\" href=\"http://transitappliance.com/cgi-bin/test_by_id.pl?id="+return_data.value.private.id+"\">test</a> | <a href=\"javascript:trAppDeleteApplianceConfig('"+return_data.value._id+"','"+return_data.value._rev+"',false,trAppDisplayMyAppliances);\">delete</a> | <a href=\"javascript:trAppCloneApplianceConfig('"+return_data.value._id+"')\">clone</a> | <a href=\"javascript:trAppReset('"+return_data.value._id+"')\">reset</a>";
 				//trAppLoadApplianceConfig(return_data.id)
@@ -103,6 +101,7 @@ function trAppDisplayMyAppliances() {
 					if (nickname == undefined) {
 						nickname = "[not yet named]";
 					}
+					window.trAppNameCache[return_data.value.private.id] = nickname;
 					
 					return_html += "<tr class='appliance_listing' valign=\"top\"><td><b class='nickname'>"+nickname+"</b><br><span class='fineprint'>"+edit_string+"</span></td><td>"+address+"</td></tr>";
 				}
