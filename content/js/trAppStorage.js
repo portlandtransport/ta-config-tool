@@ -96,8 +96,8 @@ function trAppFormatURLs(application,config) {
 			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
 		} 
 		
-		option_name_value_pair_array.push("nickname="+config.private.nickname);
-		fully_qualified_option_name_value_pair_array.push("option[nickname]="+config.private.nickname);
+		option_name_value_pair_array.push("nickname="+encodeURIComponent(config.private.nickname));
+		fully_qualified_option_name_value_pair_array.push("option[nickname]="+encodeURIComponent(config.private.nickname));
 
 		option_name_value_pair_array.push("lat="+config.private.lat);
 		fully_qualified_option_name_value_pair_array.push("option[lat]="+config.private.lat);

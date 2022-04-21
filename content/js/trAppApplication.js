@@ -156,14 +156,14 @@ function trAppBuildURL() {
 			  	fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
 				} 
 
-			option_name_value_pair_array.push("nickname="+config.private.nickname);
-			fully_qualified_option_name_value_pair_array.push("option[nickname]="+config.private.nickname);
+				option_name_value_pair_array.push("nickname="+encodeURIComponent(config.private.nickname));
+				fully_qualified_option_name_value_pair_array.push("option[nickname]="+encodeURIComponent(config.private.nickname));
+					
+				option_name_value_pair_array.push("lat="+trApp.current_appliance.private.lat);
+				fully_qualified_option_name_value_pair_array.push("option[lat]="+trApp.current_appliance.private.lat);
 				
-		  	option_name_value_pair_array.push("lat="+trApp.current_appliance.private.lat);
-		  	fully_qualified_option_name_value_pair_array.push("option[lat]="+trApp.current_appliance.private.lat);
-		  	
-		  	option_name_value_pair_array.push("lng="+trApp.current_appliance.private.lng);
-		  	fully_qualified_option_name_value_pair_array.push("option[lng]="+trApp.current_appliance.private.lng);
+				option_name_value_pair_array.push("lng="+trApp.current_appliance.private.lng);
+				fully_qualified_option_name_value_pair_array.push("option[lng]="+trApp.current_appliance.private.lng);
 		  	
 				template_data.application.simple_option_string = option_name_value_pair_array.join('&')+"";
 				template_data.application.fully_qualified_option_string = fully_qualified_option_name_value_pair_array.join('&')+"";
