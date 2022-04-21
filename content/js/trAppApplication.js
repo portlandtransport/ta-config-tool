@@ -159,7 +159,8 @@ function trAppBuildURL() {
 				option_name_value_pair_array.push("nickname="+encodeURIComponent(trApp.current_appliance.private.nickname));
 				fully_qualified_option_name_value_pair_array.push("option[nickname]="+encodeURIComponent(trApp.current_appliance.private.nickname));
 
-				var parentname = window.trAppNameCache[trAppParentId(trApp.current_appliance.private.id)];
+				var parentid = trAppParentId(trApp.current_appliance.private.id);
+				var parentname = window.trAppNameCache[parentid];
 				option_name_value_pair_array.push("parentname="+encodeURIComponent(parentname));
 				fully_qualified_option_name_value_pair_array.push("option[parentname]="+encodeURIComponent(parentname));
 					
