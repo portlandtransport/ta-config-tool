@@ -161,7 +161,7 @@ function trAppBuildURL() {
 
 				var parentname = trAppNameCache[trAppParentId(trApp.current_appliance.private.id)];
 				option_name_value_pair_array.push("parentname="+encodeURIComponent(parentname));
-				fully_qualified_option_name_value_pair_array.push("option[nickname]="+encodeURIComponent(parentname));
+				fully_qualified_option_name_value_pair_array.push("option[parentname]="+encodeURIComponent(parentname));
 					
 				option_name_value_pair_array.push("lat="+trApp.current_appliance.private.lat);
 				fully_qualified_option_name_value_pair_array.push("option[lat]="+trApp.current_appliance.private.lat);
