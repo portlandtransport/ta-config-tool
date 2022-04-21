@@ -95,6 +95,11 @@ function trAppFormatURLs(application,config) {
 			option_name_value_pair_array.push(option.name+"="+option.value);
 			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
 		} 
+
+		var parentid = trAppParentId(config.private.id);
+		var parentname = window.trAppNameCache[parentid];
+		option_name_value_pair_array.push("parentname="+encodeURIComponent(parentname));
+		fully_qualified_option_name_value_pair_array.push("option[parentname]="+encodeURIComponent(parentname));
 		
 		option_name_value_pair_array.push("nickname="+encodeURIComponent(config.private.nickname));
 		fully_qualified_option_name_value_pair_array.push("option[nickname]="+encodeURIComponent(config.private.nickname));
