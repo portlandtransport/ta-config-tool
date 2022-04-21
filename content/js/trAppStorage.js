@@ -91,16 +91,19 @@ function trAppFormatURLs(application,config) {
 			config.public.application.options = [];
 		}
 		for (var i = 0; i < config.public.application.options.length; i++){ 
-	  	var option = config.public.application.options[i]; 
-	  	option_name_value_pair_array.push(option.name+"="+option.value);
-	  	fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
+			var option = config.public.application.options[i]; 
+			option_name_value_pair_array.push(option.name+"="+option.value);
+			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
 		} 
 		
-  	option_name_value_pair_array.push("lat="+config.private.lat);
-  	fully_qualified_option_name_value_pair_array.push("option[lat]="+config.private.lat);
-  	
-  	option_name_value_pair_array.push("lng="+config.private.lng);
-  	fully_qualified_option_name_value_pair_array.push("option[lng]="+config.private.lng);
+		option_name_value_pair_array.push("nickname="+config.private.nickname);
+		fully_qualified_option_name_value_pair_array.push("option[nickname]="+config.private.nickname);
+
+		option_name_value_pair_array.push("lat="+config.private.lat);
+		fully_qualified_option_name_value_pair_array.push("option[lat]="+config.private.lat);
+		
+		option_name_value_pair_array.push("lng="+config.private.lng);
+		fully_qualified_option_name_value_pair_array.push("option[lng]="+config.private.lng);
 	  	
 		config.public.application.simple_option_string = option_name_value_pair_array.join('&')+"";
 		config.public.application.fully_qualified_option_string = fully_qualified_option_name_value_pair_array.join('&')+"";
@@ -129,11 +132,11 @@ function trAppFormatURLs(application,config) {
 		var expanded = [];
 		
 		for (var i = 0; i < application.templates.length; i++){ 
-	  	var app_template = application.templates[i].app_url;
-	  	var img_template = application.templates[i].img_url;
-	  	var app_url = app_template.process(config.public);
-	  	var img_url = img_template.process(config.public);
-	  	expanded.push( { "app_url": app_url, "img_url": img_url } );
+			var app_template = application.templates[i].app_url;
+			var img_template = application.templates[i].img_url;
+			var app_url = app_template.process(config.public);
+			var img_url = img_template.process(config.public);
+			expanded.push( { "app_url": app_url, "img_url": img_url } );
 		} 
 		
 		config.external_configuration = {"url": expanded[0].app_url, "urls": expanded};
