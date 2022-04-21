@@ -22,6 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+function trAppParentId(id) {
+	// Purpose: derive parent id for sub-screens
+	var id_sections = id.split(":");
+	var last_section = id_sections[id_sections.length - 1];
+	if (last_section.length == 1 || last_section == "OS") {
+		id_sections.pop();
+		return id_sections.join(":");
+	} else {
+		return id;
+	}
+}
+
 
 function trAppDisplayMyAppliances() {
 	
