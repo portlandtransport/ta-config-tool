@@ -148,6 +148,8 @@ function trAppDisplayFilter(filter_string) {
     $("b.nickname").each(function(index,el) {
         var nickname = $(el).text();
         var nick_parent = $(el).closest('tr');
+		var searchtext = nick_parent.text();
+		console.log(searchtext);
         if (filter_string == "") {
             $(nick_parent).show();
         } else {
