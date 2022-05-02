@@ -149,12 +149,12 @@ function trAppDisplayFilter(filter_string) {
         var nickname = $(el).text();
         var nick_parent = $(el).closest('tr');
 		var searchtext = nick_parent.text();
-		console.log(searchtext);
+		// console.log(searchtext);
         if (filter_string == "") {
             $(nick_parent).show();
         } else {
             var pattern = new RegExp(filter_string,'i');
-            if (pattern.test(nickname)) {
+            if (pattern.test(searchtext)) {
                 $(nick_parent).show();
             } else {
                 $(nick_parent).hide();
