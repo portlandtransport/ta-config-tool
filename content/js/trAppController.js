@@ -130,7 +130,7 @@ function trAppController(old_tab,new_tab) {
 			}
 		} else {
 			alert("You haven't created your display configuration yet!");
-			trAppActivateTab(0);
+			location.reload();
 			return;
 		}
 	}
@@ -160,4 +160,8 @@ function trAppController(old_tab,new_tab) {
 
 function trAppActivateTab(tab) {
 	$('#accordion').accordion( 'activate' , tab+1 );
+}
+
+function trActivateFirstEditTab() {
+	trAppActivateTab(2);
 }

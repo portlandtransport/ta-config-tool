@@ -150,11 +150,14 @@ function trAppFormatURLs(application,config) {
 	
 }
 
-function trAppLoadApplianceConfig(id) {
+function trAppLoadApplianceConfig(id,callback) {
 
 	trFirebaseGetConfig(id).then(function(data){
 		// console.log(data);
 		trApp.current_appliance = data.value;
+		if ((typeof callback) == "function") {
+			callback();
+		}
 	}).catch(function(error){
 		alert('Error: could not find appliance configuration. '+error);
 	});
