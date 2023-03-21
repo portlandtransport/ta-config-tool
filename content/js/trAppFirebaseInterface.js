@@ -47,8 +47,8 @@ onAuthStateChanged(auth, user => {
     } else {
         // console.log('No user');
         $('#accordion').css("display", "none");
-        signInWithRedirect(auth, provider);
-        // signInWithPopup(auth, provider);
+        // signInWithRedirect(auth, provider);
+        signInWithPopup(auth, provider);
     }
 });
 
