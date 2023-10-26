@@ -156,8 +156,8 @@ function trAppLoadMaps() {
 
 function trAppMapsLoaded() {
 
-	trApp.unselected_stop_icon = new google.maps.MarkerImage(trApp.unselected_stop_icon_url);
-	trApp.selected_stop_icon = new google.maps.MarkerImage(trApp.selected_stop_icon_url);
+	//trApp.unselected_stop_icon = new google.maps.MarkerImage(trApp.unselected_stop_icon_url);
+	//trApp.selected_stop_icon = new google.maps.MarkerImage(trApp.selected_stop_icon_url);
 	trAppInitialize();
 	trAppDisplayMyAppliances();
 	trAppActivateTab(0);
