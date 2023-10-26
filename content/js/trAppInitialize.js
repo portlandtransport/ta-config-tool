@@ -159,8 +159,8 @@ async function trAppLoadMaps() {
 	const { Map } = await google.maps.importLibrary("maps");
 	const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 	const { GeoCoder } = await google.maps.importLibrary("geocoding");
-	//trApp.unselected_stop_icon = new google.maps.MarkerImage(trApp.unselected_stop_icon_url);
-	//trApp.selected_stop_icon = new google.maps.MarkerImage(trApp.selected_stop_icon_url);
+	trApp.unselected_stop_icon = new google.maps.MarkerImage(trApp.unselected_stop_icon_url);
+	trApp.selected_stop_icon = new google.maps.MarkerImage(trApp.selected_stop_icon_url);
 	trAppInitialize();
 	trAppDisplayMyAppliances();
 	trAppActivateTab(0);
