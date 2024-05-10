@@ -47,8 +47,12 @@ onAuthStateChanged(auth, user => {
     } else {
         // console.log('No user');
         $('#accordion').css("display", "none");
-        signInWithRedirect(auth, provider);
-        // signInWithPopup(auth, provider);
+        if (/iPad/i.test(navigator.userAgent)) {
+            signInWithPopup(auth, provider);
+        } else {
+            signInWithRedirect(auth, provider);
+        }
+
     }
 });
 
