@@ -95,7 +95,8 @@ function trAppTrackPrivateApplianceState() {
 function trAppGeocodePrivateApplianceConfig() {
 	if (populated(trApp.current_appliance['private']['address'])) {
 		if (trApp.current_appliance['private']['address'] != trApp.current_appliance['private']['mapped_address']) {
-			var geocoder = new google.maps.Geocoder();
+			//var geocoder = new google.maps.Geocoder();
+			var geocoder = await google.maps.importLibrary("geocoding");
 		  geocoder.geocode( { 'address': trApp.current_appliance['private']['address'] }, function(results, status) {
 		    if (status == google.maps.GeocoderStatus.OK) {
 		      var latlng = results[0].geometry.location;
