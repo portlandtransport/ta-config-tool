@@ -1066,46 +1066,6 @@ var trStoredApplications = [
     "_id": "tbdvertical_dev",
     "fields": [
       {
-        "advice": "Will appear at top of display after the words: Transit Board for",
-        "label": "Banner Title",
-        "html": "\u003Cinput type='text' name='banner' size='30'\u003E"
-      },
-      {
-        "advice": "Make fonts a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "label": "Font size:",
-        "html": "\u003Cinput type='text' class='pct-spin' id='font-size-adjust' name='font-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:200,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Make trip block a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "label": "Trip block size:",
-        "html": "\u003Cinput type='text' class='pct-spin' id='trip-size-adjust' name='trip-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:300,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "URL path to optional logo to display",
-        "label": "Logo:",
-        "html": "\u003Cinput type='text' name='logo' value='' size='45'\u003E"
-      },
-      {
-        "advice": "URL path to optional custom stylesheet",
-        "label": "Stylesheet:",
-        "html": "\u003Cinput type='text' name='stylesheet' value='' size='45'\u003E"
-      },
-      {
-        "advice": "Show this many of the nearest Car2Go vehicles",
-        "label": "Car2Go vehicles:",
-        "html": "\u003Cinput type='text' name='car2go' value='0' size='5'\u003E"
-      },
-      {
-        "advice": "Number of columns to arrange arrivals in",
-        "label": "Columns:",
-        "html": "\u003Cinput type='text' name='columns' value='2' size='5'\u003E"
-      },
-      {
-        "advice": "Disable display from scrolling beyond set of arrivals on initial screen",
-        "label": "Suppress scrolling:",
-        "html": "\u003Cinput type='checkbox' name='suppress_scrolling' value='1'\u003E"
-      },
-      {
         "advice": "Number of pages to rotate through",
         "label": "Number of Pages:",
         "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E"
