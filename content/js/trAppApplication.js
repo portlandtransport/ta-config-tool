@@ -46,7 +46,7 @@ function trAppSelectApplication() {
 	  		url_templates[return_data.application_id] = escape(return_data.url_template);
 	  		var agencies = return_data.agencies.join(", ");
 	  		var select_href = "javascript:trAppSetApplication('"+return_data.application_id+"')";
-		    return_html += "<tr valign='top'><td><input type='radio' name='application_id' value='"+return_data.application_id+"'"+first+" onclick=\"trAppSetApplication('"+return_data.application_id+"')\"></td><td><a href=\""+select_href+"\">"+return_data.title+"</a><p>"+return_data.description+"</p></td></tr>";
+		    return_html += "<tr valign='top'><td><input type='radio' name='application_id' value='"+return_data.application_id+"'"+first+" onclick=\"trAppSetApplication('"+return_data.application_id+"')\"></td><td><a href=\""+select_href+"\">"+return_data.title+"</a></td></tr>";
 		  	first = "";
 		  }
 		}
