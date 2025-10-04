@@ -34,6 +34,49 @@ function trAppSelectApplication() {
 	
 	var default_app = 'tbdline';
 	var url_templates = {};
+	return_html += "<table class='transparent_table'><tr valign='top'><td class='transparent_table'><form><table><tr><th></th><th width='300px'>Description</th></tr>\n";
+	var first = " checked";
+	if (application_ids.length > 0) {
+		for (var i = 0; i < application_ids.length; i++) {
+			var return_data = trApp.applications.applicationData(application_ids[i]);
+			if (!return_data.hidden) {	
+	  		if (default_app == undefined) {
+	  			default_app = return_data.application_id; // first application is default
+	  		}
+	  		url_templates[return_data.application_id] = escape(return_data.url_template);
+	  		var agencies = return_data.agencies.join(", ");
+	  		var select_href = "javascript:trAppSetApplication('"+return_data.application_id+"')";
+		    return_html += "<tr valign='top'><td><input type='radio' name='application_id' value='"+return_data.application_id+"'"+first+" onclick=\"trAppSetApplication('"+return_data.application_id+"')\"></td><td><a href=\""+select_href+"\">"+return_data.title+"</a><p>"+return_data.description+"</p></td></tr>";
+		  	first = "";
+		  }
+		}
+		return_html += "</table></form></td><td class='transparent_table'>&nbsp;&nbsp;</td><td class='transparent_table'><h4>Nickname: "+trApp.current_appliance.private.nickname+"</h4><form onsubmit='trAppActivateTab(5);return false;'><input type='image' src='images/next.png'></form></td></tr></table>\n";
+
+  } else {
+  	return_html += "No applications defined.";
+  }
+  $("#fold4").html(return_html);
+
+  if (trApp.current_appliance.public.application != undefined && trApp.current_appliance.public.application.id != undefined) {
+  	trAppSetApplication(trApp.current_appliance.public.application.id);
+  } else {
+  	trAppSetApplication(default_app);
+  }
+  		
+}
+
+function trAppSelectApplicationOld() {
+	
+	var return_html = "";
+	
+	// get all applications
+	
+	var application_ids = trApp.applications.applicationIds();
+	
+	// need some kind of test for success?
+	
+	var default_app = 'tbdline';
+	var url_templates = {};
 	return_html += "<table class='transparent_table'><tr valign='top'><td class='transparent_table'><form><table><tr><th></th><th width='300px'>Description</th><th>Systems</th></tr>\n";
 	var first = " checked";
 	if (application_ids.length > 0) {
@@ -96,6 +139,8 @@ function trAppConfigureOptions() {
   }
 	    
 }
+
+
 
 function trAppReduceFormArray(options_array) {
 	var options_object = {};
