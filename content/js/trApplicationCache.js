@@ -585,7 +585,7 @@ var trStoredApplications = [
     "templates": [
       {
         "app_url": "http://transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://transitappliance.com/assets/apps/img/ping.png"
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
       },
       {
         "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
