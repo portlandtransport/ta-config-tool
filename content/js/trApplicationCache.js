@@ -596,14 +596,45 @@ var trStoredApplications = [
     "url_template": "http://transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
     "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
     "agencies": [
-      "TriMet",
-      "Portland Streetcar",
-      "SF-MUNI",
-      "AC Transit"
+      "Portland Streetcar"
     ],
     "title": "Streetcar Stop",
     "application_id": "streetcar-stop",
     "_id": "streetcar-stop",
+    "fields": [
+      {
+        "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
+        "label": "Number of Arrivals",
+        "html": "\u003Cinput type='text' name='number' size='5' value='5'\u003E"
+      },
+      {
+        "advice": "The delay between changing slides (in seconds).",
+        "label": "Delay",
+        "html": "\u003Cinput type='text' name='timeout' size='2' value='3'\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      }
+    ]
+  },  
+  {
+    "templates": [
+      {
+        "app_url": "http://dev.transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://dev.transitappliance.com/apps/assets/img/ping.png"
+      }
+    ],
+    "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
+    "url_template": "http://dev.transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+    "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
+    "agencies": [
+      "Portland Streetcar"
+    ],
+    "title": "Streetcar Stop Development",
+    "application_id": "dev-streetcar-stop",
+    "_id": "dev-streetcar-stop",
     "fields": [
       {
         "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
