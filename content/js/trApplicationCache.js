@@ -593,7 +593,7 @@ var trStoredApplications = [
       }
     ],
     "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
-    "url_template": "http://transitappliance.com/apps/steetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+    "url_template": "http://transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
     "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
     "agencies": [
       "TriMet",
