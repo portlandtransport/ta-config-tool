@@ -584,16 +584,16 @@ var trStoredApplications = [
   {
     "templates": [
       {
-        "app_url": "http://transitappliance.com/apps/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "app_url": "http://transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
         "img_url": "http://transitappliance.com/assets/img/ping.png"
       },
       {
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
         "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
       }
     ],
     "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
-    "url_template": "http://transitappliance.com/apps/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+    "url_template": "http://transitappliance.com/apps/steetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
     "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
     "agencies": [
       "TriMet",
@@ -601,7 +601,7 @@ var trStoredApplications = [
       "SF-MUNI",
       "AC Transit"
     ],
-    "title": "Transit Board™ Personal",
+    "title": "Streetcar Stop",
     "application_id": "streetcar-stop",
     "_id": "streetcar-stop",
     "fields": [
