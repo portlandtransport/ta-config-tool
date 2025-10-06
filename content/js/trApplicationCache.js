@@ -652,59 +652,6 @@ var trStoredApplications = [
         "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
       }
     ]
-  },
-  {
-    "_rev": "3-20c1257113e02b67c4035906177f1ad5",
-    "description": "Portland Streetcar arrivals grouped by transit line (experimental)",
-    "agencies": [
-      "Portland Streetcar"
-    ],
-    "title": "Portland Streetcar by Line",
-    "application_id": "tbdstreetcar",
-    "_id": "tbdstreetcar",
-    "fields": [
-      {
-        "advice": "Will appear at top of display after the words: Transit Board for",
-        "label": "Banner Title",
-        "html": "\u003Cinput type='text' name='banner' size='30'\u003E"
-      },
-      {
-        "advice": "Make fonts a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "label": "Font size:",
-        "html": "\u003Cinput type='text' class='pct-spin' id='font-size-adjust' name='font-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:200,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Make trip block a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "label": "Trip block size:",
-        "html": "\u003Cinput type='text' class='pct-spin' id='trip-size-adjust' name='trip-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:300,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Make ticker scroll a little faster or slower (e.g., 110 = 10% faster)",
-        "label": "Scroll speed:",
-        "html": "\u003Cinput type='text' class='pct-spin' name='scroll-speed-adjust' value='100' size='5'\u003E"
-      },
-      {
-        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
-        "label": "Screen Margins:",
-        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      }
-    ],
-    "templates": [
-      {
-        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
-        "app_url": "http://transitappliance.com/apps/streetcarByLine/streetcarByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      },
-      {
-        "img_url": "http://alt1.transitboard.com/apps/assets/img/ping.png",
-        "app_url": "http://alt1.transitboard.com/apps/streetcarByLine/streetcarByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      }
-    ],
-    "url_template": "http://transitappliance.com/apps/streetcarByLine/streetcarByLine.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}"
   }
 ];
 
