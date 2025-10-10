@@ -129,71 +129,36 @@ var trStoredApplications = [
     ]
   },
   {
-    "spacer": true
-  },
- 
-  {
-    "_rev": "2-d2497c0861c33f36723140e36abc04f5",
-    "description": "Message Pane",
-    "agencies": [
-      "TriMet",
-      "Portland Streetcar"
-    ],
-    "title": "Message Pane",
-    "application_id": "msgpane",
-    "_id": "msgpane",
-    "fields": [
-      {
-        "advice": "A full HTML page - populate this OR Image URL, not both.",
-        "label": "Content URL",
-        "html": "\u003Cinput name='content_url'\u003E"
-      },
-      {
-        "advice": "URL of image file to display - populate this OR Content URL, not both.",
-        "label": "Image URL",
-        "html": "\u003Cinput name='image_url'\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      }
-    ],
-    "url_template": "http://transitappliance.com/apps/messagePane/messagePane.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
     "templates": [
       {
-        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
-        "app_url": "http://transitappliance.com/apps/messagePane/messagePane.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      },
-      {
-        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/messagePane/messagePane.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      }
-    ]
-  },
-  {
-    "hidden": true,
-    "templates": [
-      {
-        "app_url": "http://transitappliance.com/apps/ohsu-parking/ohsu.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "app_url": "http://transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
         "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
       },
       {
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/ohsu-parking/ohsu.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
         "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
       }
     ],
-    "_rev": "2-d9faf32aee21a582481771ba3c8a3d3b",
-    "description": "OHSU Parking",
-    "url_template": "http://transitappliance.com/apps/ohsu-parking/ohsu.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
+    "url_template": "http://transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+    "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
     "agencies": [
-      "TriMet",
       "Portland Streetcar"
     ],
-    "title": "OHSU Parking",
-    "application_id": "ohsuparking",
-    "_id": "ohsuparking",
+    "title": "Streetcar Single",
+    "application_id": "sc-single",
+    "_id": "sc-single",
     "fields": [
+      {
+        "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
+        "label": "Number of Arrivals",
+        "html": "\u003Cinput type='text' name='number' size='5' value='5'\u003E"
+      },
+      {
+        "advice": "The delay between changing slides (in seconds).",
+        "label": "Delay",
+        "html": "\u003Cinput type='text' name='timeout' size='2' value='3'\u003E"
+      },
       {
         "advice": "Leave empty unless you know what this is for!",
         "label": "Expert Options",
@@ -201,6 +166,10 @@ var trStoredApplications = [
       }
     ]
   },
+  {
+    "spacer": true
+  },
+  ,
   {
     "_rev": "5-a19ff1f52b2fd6b6a294bd5f5506e8d0",
     "description": "Displays arrivals grouped by transit line, with additional info on the right",
@@ -268,6 +237,78 @@ var trStoredApplications = [
         "advice": "Put supplemental content on left",
         "html": "\u003Cinput type='checkbox' name='supplemental_left' value='1'\u003E",
         "label": "Supplemental split on left side"
+      }
+    ]
+  },
+  
+  { "spacer":true},
+ 
+  {
+    "_rev": "2-d2497c0861c33f36723140e36abc04f5",
+    "description": "Message Pane",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Message Pane",
+    "application_id": "msgpane",
+    "_id": "msgpane",
+    "fields": [
+      {
+        "advice": "A full HTML page - populate this OR Image URL, not both.",
+        "label": "Content URL",
+        "html": "\u003Cinput name='content_url'\u003E"
+      },
+      {
+        "advice": "URL of image file to display - populate this OR Content URL, not both.",
+        "label": "Image URL",
+        "html": "\u003Cinput name='image_url'\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      }
+    ],
+    "url_template": "http://transitappliance.com/apps/messagePane/messagePane.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "templates": [
+      {
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://transitappliance.com/apps/messagePane/messagePane.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      },
+      {
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/messagePane/messagePane.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+    ]
+  },
+  {
+    "hidden": true,
+    "templates": [
+      {
+        "app_url": "http://transitappliance.com/apps/ohsu-parking/ohsu.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
+      },
+      {
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/ohsu-parking/ohsu.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
+      }
+    ],
+    "_rev": "2-d9faf32aee21a582481771ba3c8a3d3b",
+    "description": "OHSU Parking",
+    "url_template": "http://transitappliance.com/apps/ohsu-parking/ohsu.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "OHSU Parking",
+    "application_id": "ohsuparking",
+    "_id": "ohsuparking",
+    "fields": [
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
       }
     ]
   },
@@ -675,44 +716,6 @@ var trStoredApplications = [
     "title": "Streetcar Single Development",
     "application_id": "sc-single-dev",
     "_id": "sc-single-dev",
-    "fields": [
-      {
-        "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
-        "label": "Number of Arrivals",
-        "html": "\u003Cinput type='text' name='number' size='5' value='5'\u003E"
-      },
-      {
-        "advice": "The delay between changing slides (in seconds).",
-        "label": "Delay",
-        "html": "\u003Cinput type='text' name='timeout' size='2' value='3'\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      }
-    ]
-  },  
-  {
-    "templates": [
-      {
-        "app_url": "http://transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
-      },
-      {
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
-      }
-    ],
-    "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
-    "url_template": "http://transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-    "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
-    "agencies": [
-      "Portland Streetcar"
-    ],
-    "title": "Streetcar Single",
-    "application_id": "sc-single",
-    "_id": "sc-single",
     "fields": [
       {
         "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
