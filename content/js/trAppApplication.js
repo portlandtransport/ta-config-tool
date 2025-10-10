@@ -39,7 +39,9 @@ function trAppSelectApplication() {
 	if (application_ids.length > 0) {
 		for (var i = 0; i < application_ids.length; i++) {
 			var return_data = trApp.applications.applicationData(application_ids[i]);
-			if (!return_data.hidden) {	
+			if (return_data.spacer) {
+				return_html += "<tr><td><hr></td></tr>\n";
+			} else if (!return_data.hidden) {	
 				if (default_app == undefined) {
 					default_app = return_data.application_id; // first application is default
 				}
@@ -49,9 +51,7 @@ function trAppSelectApplication() {
 				return_html += "<tr valign='top'><td><input type='radio' name='application_id' value='"+return_data.application_id+"'"+first+" onclick=\"trAppSetApplication('"+return_data.application_id+"')\"></td><td><a href=\""+select_href+"\">"+return_data.title+"</a></td></tr>";
 				first = "";
 			}
-			if (return_data.spacer) {
-				return_html += "<tr><td><hr></td></tr>\n";
-			}
+
 		}
 		return_html += "</table></form></td><td class='transparent_table'>&nbsp;&nbsp;</td><td class='transparent_table'><h4>Nickname: "+trApp.current_appliance.private.nickname+"</h4><form onsubmit='trAppActivateTab(5);return false;'><input type='image' src='images/next.png'></form></td></tr></table>\n";
 
