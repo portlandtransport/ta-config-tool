@@ -23,6 +23,114 @@ SOFTWARE.
 */
 
 var trStoredApplications = [
+
+  {
+    "_rev": "17-305d5e63828a4baa272ea739cf3c39ef",
+    "description": "Displays arrivals grouped by transit line",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Transit Board™ by Line",
+    "application_id": "tbdline",
+    "_id": "tbdline",
+    "url_template": "http://transitappliance.com/apps/transitBoardByLine/transitBoardByLine.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "templates": [
+      {
+        "app_url": "http://transitappliance.com/apps/transitBoardByLine/transitBoardByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
+      },
+      {
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/transitBoardByLine/transitBoardByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+    ],
+    "fields": [
+      {
+        "label": "Banner Title",
+        "advice": "Will appear at top of display after the words: Transit Board for",
+        "html": "\u003Cinput type='text' name='banner' size='30'\u003E"
+      },
+      {
+        "advice": "Make fonts a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
+        "label": "Font size:",
+        "html": "\u003Cinput type='text' class='pct-spin' id='font-size-adjust' name='font-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:200,step: 1 });});\u003C/script\u003E"
+      },
+      {
+        "label": "Trip block size:",
+        "advice": "Make trip block a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
+        "html": "\u003Cinput type='text' class='pct-spin' id='trip-size-adjust' name='trip-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:300,step: 1 });});\u003C/script\u003E"
+      },
+      {
+        "html": "\u003Cinput type='text' name='logo' value='' size='45'\u003E",
+        "advice": "URL path to optional logo to display",
+        "label": "Logo:"
+      },
+      {
+        "html": "\u003Cinput type='text' name='stylesheet' value='' size='45'\u003E",
+        "label": "Stylesheet:",
+        "advice": "URL path to optional custom stylesheet"
+      },
+      {
+        "html": "\u003Cinput type='radio' name='show_weather' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_weather' value='top'\u003E Top \u003Cinput type='radio' name='show_weather' value='bottom'\u003E Bottom",
+        "label": "Include weather:",
+        "advice": "Also requires setting up API key separately"
+      },
+      {
+        "html": "\u003Cinput type='text' name='car2go' value='0' size='5'\u003E",
+        "advice": "Show this many of the nearest Car2Go vehicles",
+        "label": "Car2Go vehicles:"
+      },
+      {
+        "advice": "Show this many of the nearest bikeshare locations",
+        "html": "\u003Cinput type='text' name='gbfs' value='0' size='5'\u003E",
+        "label": "Bikeshare locations:"
+      },
+      {
+        "advice": "Number of columns to arrange arrivals in",
+        "html": "\u003Cinput type='text' name='columns' value='2' size='5'\u003E",
+        "label": "Columns:"
+      },
+      {
+        "label": "Suppress scrolling:",
+        "advice": "Disable display from scrolling beyond set of arrivals on initial screen",
+        "html": "\u003Cinput type='checkbox' name='suppress_scrolling' value='1'\u003E"
+      },
+      {
+        "label": "Suppress \"Downtown Only\" arrivals:",
+        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E",
+        "advice": "Suppress display of arrivals that include the string \"Downtown Only\""
+      },
+      {
+        "label": "Reset:",
+        "advice": "Will cause the display to reload its configuration at the next status update interval",
+        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
+      },
+      {
+        "label": "Screen Margins:",
+        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
+        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E",
+        "label": "Expert Options"
+      },
+      {
+        "label": "Display agency in arrivals",
+        "html": "\u003Cinput type='checkbox' name='add_agency' value='1'\u003E",
+        "advice": "Will add agency name to text of displayed transit arrival"
+      },
+      {
+        "advice": "Will remove name of stop from text of arrivals display",
+        "html": "\u003Cinput type='checkbox' name='suppress_stop_location' value='1'\u003E",
+        "label": "Suppress stop location from arrivals"
+      }
+    ]
+  },
+  {
+    "spacer": true
+  },
  
   {
     "_rev": "2-d2497c0861c33f36723140e36abc04f5",
@@ -64,6 +172,7 @@ var trStoredApplications = [
     ]
   },
   {
+    "hidden": true,
     "templates": [
       {
         "app_url": "http://transitappliance.com/apps/ohsu-parking/ohsu.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
@@ -224,110 +333,7 @@ var trStoredApplications = [
     ]
   },
   
-  {
-    "_rev": "17-305d5e63828a4baa272ea739cf3c39ef",
-    "description": "Displays arrivals grouped by transit line",
-    "agencies": [
-      "TriMet",
-      "Portland Streetcar"
-    ],
-    "title": "Transit Board™ by Line",
-    "application_id": "tbdline",
-    "_id": "tbdline",
-    "url_template": "http://transitappliance.com/apps/transitBoardByLine/transitBoardByLine.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
-    "templates": [
-      {
-        "app_url": "http://transitappliance.com/apps/transitBoardByLine/transitBoardByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://transitappliance.com/apps/assets/img/ping.png"
-      },
-      {
-        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/transitBoardByLine/transitBoardByLine.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      }
-    ],
-    "fields": [
-      {
-        "label": "Banner Title",
-        "advice": "Will appear at top of display after the words: Transit Board for",
-        "html": "\u003Cinput type='text' name='banner' size='30'\u003E"
-      },
-      {
-        "advice": "Make fonts a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "label": "Font size:",
-        "html": "\u003Cinput type='text' class='pct-spin' id='font-size-adjust' name='font-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:200,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "label": "Trip block size:",
-        "advice": "Make trip block a little bigger or a little smaller - percentage value (e.g., 110 = 10% larger)",
-        "html": "\u003Cinput type='text' class='pct-spin' id='trip-size-adjust' name='trip-size-adjust' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.pct-spin').SpinButton({min:2,max:300,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "html": "\u003Cinput type='text' name='logo' value='' size='45'\u003E",
-        "advice": "URL path to optional logo to display",
-        "label": "Logo:"
-      },
-      {
-        "html": "\u003Cinput type='text' name='stylesheet' value='' size='45'\u003E",
-        "label": "Stylesheet:",
-        "advice": "URL path to optional custom stylesheet"
-      },
-      {
-        "html": "\u003Cinput type='radio' name='show_weather' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_weather' value='top'\u003E Top \u003Cinput type='radio' name='show_weather' value='bottom'\u003E Bottom",
-        "label": "Include weather:",
-        "advice": "Also requires setting up API key separately"
-      },
-      {
-        "html": "\u003Cinput type='text' name='car2go' value='0' size='5'\u003E",
-        "advice": "Show this many of the nearest Car2Go vehicles",
-        "label": "Car2Go vehicles:"
-      },
-      {
-        "advice": "Show this many of the nearest bikeshare locations",
-        "html": "\u003Cinput type='text' name='gbfs' value='0' size='5'\u003E",
-        "label": "Bikeshare locations:"
-      },
-      {
-        "advice": "Number of columns to arrange arrivals in",
-        "html": "\u003Cinput type='text' name='columns' value='2' size='5'\u003E",
-        "label": "Columns:"
-      },
-      {
-        "label": "Suppress scrolling:",
-        "advice": "Disable display from scrolling beyond set of arrivals on initial screen",
-        "html": "\u003Cinput type='checkbox' name='suppress_scrolling' value='1'\u003E"
-      },
-      {
-        "label": "Suppress \"Downtown Only\" arrivals:",
-        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E",
-        "advice": "Suppress display of arrivals that include the string \"Downtown Only\""
-      },
-      {
-        "label": "Reset:",
-        "advice": "Will cause the display to reload its configuration at the next status update interval",
-        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
-      },
-      {
-        "label": "Screen Margins:",
-        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
-        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E",
-        "label": "Expert Options"
-      },
-      {
-        "label": "Display agency in arrivals",
-        "html": "\u003Cinput type='checkbox' name='add_agency' value='1'\u003E",
-        "advice": "Will add agency name to text of displayed transit arrival"
-      },
-      {
-        "advice": "Will remove name of stop from text of arrivals display",
-        "html": "\u003Cinput type='checkbox' name='suppress_stop_location' value='1'\u003E",
-        "label": "Suppress stop location from arrivals"
-      }
-    ]
-  },
+
   {
     "_rev": "14-cf2e7b85758cf3449b96c9df875fd727",
     "description": "Displays arrivals grouped by transit line (development version)",
