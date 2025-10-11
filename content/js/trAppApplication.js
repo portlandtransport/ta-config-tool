@@ -40,7 +40,12 @@ function trAppSelectApplication() {
 		for (var i = 0; i < application_ids.length; i++) {
 			var return_data = trApp.applications.applicationData(application_ids[i]);
 			if (return_data.spacer) {
-				return_html += "<tr><td><hr></td></tr>\n";
+				if (return_data.title != "") {
+					return_html += "<tr><td>"+return_data.title+"</td></tr>\n";
+				} else {
+					return_html += "<tr><td><hr></td></tr>\n";
+				}
+				
 			} else if (!return_data.hidden) {	
 				if (default_app == undefined) {
 					default_app = return_data.application_id; // first application is default

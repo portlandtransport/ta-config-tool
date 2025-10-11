@@ -23,7 +23,9 @@ SOFTWARE.
 */
 
 var trStoredApplications = [
-
+  { "spacer": true,
+    "title": "Primary Applications"
+  }
   {
     "_rev": "17-305d5e63828a4baa272ea739cf3c39ef",
     "description": "Displays arrivals grouped by transit line",
