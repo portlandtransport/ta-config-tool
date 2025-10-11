@@ -39,8 +39,8 @@ function trAppSelectApplication() {
 	if (application_ids.length > 0) {
 		for (var i = 0; i < application_ids.length; i++) {
 			var return_data = trApp.applications.applicationData(application_ids[i]);
-			console.log(return_data.application_id);
-			console.log(return_data.spacer);
+			//console.log(return_data.application_id);
+			//console.log(return_data.spacer);
 			if (return_data.spacer) {
 				if (return_data.title != "") {
 					return_html += "<tr><td></td><td><b>"+return_data.title+"</b></td></tr>\n";

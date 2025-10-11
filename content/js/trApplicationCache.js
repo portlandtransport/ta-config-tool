@@ -424,14 +424,14 @@ var trStoredApplications = [
 
   {
     "spacer": true,
-    "title": "Primary applications (Development)",
+    "title": "Primary applications (development)",
     "application_id": "primary_dev"
     // development
   },
 
  {
     "_rev": "14-cf2e7b85758cf3449b96c9df875fd727",
-    "description": "Displays arrivals grouped by transit line (development version)",
+    "description": "Displays arrivals grouped by transit line (development)",
     "agencies": [
       "TriMet",
       "Portland Streetcar"
@@ -542,7 +542,7 @@ var trStoredApplications = [
     "agencies": [
       "Portland Streetcar"
     ],
-    "title": "Streetcar Single Development",
+    "title": "Streetcar Single (development)",
     "application_id": "sc-single-dev",
     "_id": "sc-single-dev",
     "fields": [
@@ -566,7 +566,7 @@ var trStoredApplications = [
   
     {
     "spacer": true,
-    "title": "Wrappers (Development)",
+    "title": "Wrappers (development)",
     "application_id": "wrappers_dev"
     // development
   },
@@ -577,7 +577,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board Horizontal Split (development version)",
+    "title": "Transit Board Horizontal Split (development)",
     "application_id": "tbdhorizontal_dev",
     "_id": "tbdhorizontal_dev",
     "templates": [
@@ -744,7 +744,7 @@ var trStoredApplications = [
     "agencies": [
       "Portland Streetcar"
     ],
-    "title": "Streetcar Stop Development",
+    "title": "Streetcar Stop (development)",
     "application_id": "dev-streetcar-stop",
     "_id": "dev-streetcar-stop",
     "fields": [
