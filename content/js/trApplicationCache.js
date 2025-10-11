@@ -429,78 +429,14 @@ var trStoredApplications = [
     // development
   },
 
-
-  {
-    "_rev": "2-882cf8587e8f3560aa295a1ace073dda",
-    "description": "Displays arrivals grouped by transit line, with additional info on the right",
-    "agencies": [
-      "TriMet",
-      "Portland Streetcar"
-    ],
-    "title": "Transit Board™ Horizontal Split (development version)",
-    "application_id": "tbdhorizontal_dev",
-    "_id": "tbdhorizontal_dev",
-    "templates": [
-      {
-        "img_url": "http://dev.transitappliance.com/apps/assets/img/ping.png",
-        "app_url": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      }
-    ],
-    "url_template": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
-    "fields": [
-     
-      {
-        "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E",
-        "advice": "Number of pages to rotate through",
-        "label": "Number of Pages:"
-      },
-      {
-        "advice": "Suppress display of arrivals that include the string \"Downtown Only\"",
-        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E",
-        "label": "Suppress \"Downtown Only\" arrivals:"
-      },
-      {
-        "label": "Reset:",
-        "advice": "Will cause the display to reload its configuration at the next status update interval",
-        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
-      },
-      {
-        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
-        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E",
-        "label": "Screen Margins:"
-      },
-      {
-        "html": "\u003Cinput type='text' class='splitpct' id='splitpct' name='splitpct' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.splitpct').SpinButton({min:2,max:100,step: 1 });});\u003C/script\u003E",
-        "label": "Screen Split:",
-        "advice": "Horizontal portion of screen devoted to transit display (100 means no other info)"
-      },
-      {
-        "label": "Supplemental Info URL:",
-        "advice": "URL path to html page to be shown on right hand side of display",
-        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      },
-      {
-        "advice": "Put supplemental content on left",
-        "html": "\u003Cinput type='checkbox' name='supplemental_left' value='1'\u003E",
-        "label": "Supplemental split on left side"
-      }
-    ]
-  },
-  
-
-  {
+ {
     "_rev": "14-cf2e7b85758cf3449b96c9df875fd727",
     "description": "Displays arrivals grouped by transit line (development version)",
     "agencies": [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ by Line (development version)",
+    "title": "Transit Board by Line (development)",
     "application_id": "tbdline_dev",
     "_id": "tbdline_dev",
     "templates": [
@@ -593,6 +529,111 @@ var trStoredApplications = [
       }
     ]
   },
+   {
+    "templates": [
+      {
+        "app_url": "http://dev.transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://dev.transitappliance.com/apps/assets/img/ping.png"
+      }
+    ],
+    "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
+    "url_template": "http://dev.transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+    "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
+    "agencies": [
+      "Portland Streetcar"
+    ],
+    "title": "Streetcar Single Development",
+    "application_id": "sc-single-dev",
+    "_id": "sc-single-dev",
+    "fields": [
+      {
+        "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
+        "label": "Number of Arrivals",
+        "html": "\u003Cinput type='text' name='number' size='5' value='5'\u003E"
+      },
+      {
+        "advice": "The delay between changing slides (in seconds).",
+        "label": "Delay",
+        "html": "\u003Cinput type='text' name='timeout' size='2' value='3'\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      }
+    ]
+  },
+  
+    {
+    "spacer": true,
+    "title": "Wrappers (Development)",
+    "application_id": "wrappers_dev"
+    // development
+  },
+  {
+    "_rev": "2-882cf8587e8f3560aa295a1ace073dda",
+    "description": "Displays arrivals grouped by transit line, with additional info on the right",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Transit Board™ Horizontal Split (development version)",
+    "application_id": "tbdhorizontal_dev",
+    "_id": "tbdhorizontal_dev",
+    "templates": [
+      {
+        "img_url": "http://dev.transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+    ],
+    "url_template": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "fields": [
+     
+      {
+        "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E",
+        "advice": "Number of pages to rotate through",
+        "label": "Number of Pages:"
+      },
+      {
+        "advice": "Suppress display of arrivals that include the string \"Downtown Only\"",
+        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E",
+        "label": "Suppress \"Downtown Only\" arrivals:"
+      },
+      {
+        "label": "Reset:",
+        "advice": "Will cause the display to reload its configuration at the next status update interval",
+        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
+      },
+      {
+        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
+        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E",
+        "label": "Screen Margins:"
+      },
+      {
+        "html": "\u003Cinput type='text' class='splitpct' id='splitpct' name='splitpct' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.splitpct').SpinButton({min:2,max:100,step: 1 });});\u003C/script\u003E",
+        "label": "Screen Split:",
+        "advice": "Horizontal portion of screen devoted to transit display (100 means no other info)"
+      },
+      {
+        "label": "Supplemental Info URL:",
+        "advice": "URL path to html page to be shown on right hand side of display",
+        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      },
+      {
+        "advice": "Put supplemental content on left",
+        "html": "\u003Cinput type='checkbox' name='supplemental_left' value='1'\u003E",
+        "label": "Supplemental split on left side"
+      }
+    ]
+  },
+  
+
+ 
   {
     "_rev": "1-60ff7f6b0f1c422acff6eca51d8f2f07",
     "description": "Displays arrivals grouped by transit line, with additional info on the right",
@@ -600,7 +641,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ Vertical Split, development version",
+    "title": "Transit Board Vertical Split, development version",
     "application_id": "tbdvertical_dev",
     "_id": "tbdvertical_dev",
     "fields": [
@@ -651,6 +692,7 @@ var trStoredApplications = [
   
 
   {
+    "hidden": true,
     "templates": [
       {
         "app_url": "http://transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
@@ -689,6 +731,7 @@ var trStoredApplications = [
     ]
   },  
   {
+    "hidden": true,
     "templates": [
       {
         "app_url": "http://dev.transitappliance.com/apps/streetcar-stop/streetcar-stop.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
@@ -722,40 +765,7 @@ var trStoredApplications = [
       }
     ]
   },
-  {
-    "templates": [
-      {
-        "app_url": "http://dev.transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://dev.transitappliance.com/apps/assets/img/ping.png"
-      }
-    ],
-    "_rev": "8-8119520fcbd77afdf9057ffa768b1c0b",
-    "url_template": "http://dev.transitappliance.com/apps/streetcarSingle/streetcarSingle.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-    "description": "Displays a single line at a time, showing arrivals in the next 60 minutes. Cycles through the lines, one line per slide. Great for small displays.",
-    "agencies": [
-      "Portland Streetcar"
-    ],
-    "title": "Streetcar Single Development",
-    "application_id": "sc-single-dev",
-    "_id": "sc-single-dev",
-    "fields": [
-      {
-        "advice": "The number of routes to cycle through, one per page. If there are more than n routes, the next n arrivals will be shown.",
-        "label": "Number of Arrivals",
-        "html": "\u003Cinput type='text' name='number' size='5' value='5'\u003E"
-      },
-      {
-        "advice": "The delay between changing slides (in seconds).",
-        "label": "Delay",
-        "html": "\u003Cinput type='text' name='timeout' size='2' value='3'\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      }
-    ]
-  }
+ 
 ];
 
 function trApplicationCache(callback) {

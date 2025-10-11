@@ -43,7 +43,7 @@ function trAppSelectApplication() {
 			console.log(return_data.spacer);
 			if (return_data.spacer) {
 				if (return_data.title != "") {
-					return_html += "<tr><td></td><td>"+return_data.title+"</td></tr>\n";
+					return_html += "<tr><td></td><td><b>"+return_data.title+"</b></td></tr>\n";
 				} else {
 					return_html += "<tr><td></td><td><hr></td></tr>\n";
 				}
