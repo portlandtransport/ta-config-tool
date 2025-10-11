@@ -41,9 +41,9 @@ function trAppSelectApplication() {
 			var return_data = trApp.applications.applicationData(application_ids[i]);
 			if (return_data.spacer) {
 				if (return_data.title != "") {
-					return_html += "<tr><td>"+return_data.title+"</td></tr>\n";
+					return_html += "<tr><td></td><td>"+return_data.title+"</td></tr>\n";
 				} else {
-					return_html += "<tr><td><hr></td></tr>\n";
+					return_html += "<tr><td></td><td><hr></td></tr>\n";
 				}
 				
 			} else if (!return_data.hidden) {	
