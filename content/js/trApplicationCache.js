@@ -24,7 +24,8 @@ SOFTWARE.
 
 var trStoredApplications = [
   { "spacer": true,
-    "title": "Primary Applications"
+    "title": "Primary Applications",
+    "application_id": "primary spacer"
   },
   {
     "_rev": "17-305d5e63828a4baa272ea739cf3c39ef",
@@ -169,7 +170,9 @@ var trStoredApplications = [
     ]
   },
   {
-    "spacer": true
+    "spacer": true,
+    "title": "Wrappers",
+    "application_id": "wrappers"
   },
   ,
   {
@@ -311,7 +314,11 @@ var trStoredApplications = [
     "url_template": "http://transitappliance.com/apps/transitBoardVertical/transitBoardVertical.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}"
   },
 
-  { "spacer":true},
+  { "spacer":true,
+    "title": "Ancillary apps",
+    "appliation_id": "ancillary"
+
+  },
   // secondary apps
  
   {
@@ -416,7 +423,9 @@ var trStoredApplications = [
   },
 
   {
-    "spacer": true
+    "spacer": true,
+    "title": "Primary applications (Development)",
+    "application_id": "primary_dev"
     // development
   },
 
