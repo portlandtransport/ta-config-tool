@@ -34,7 +34,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ by Line",
+    "title": "Transit Board by Line",
     "application_id": "tbdline",
     "_id": "tbdline",
     "url_template": "http://transitappliance.com/apps/transitBoardByLine/transitBoardByLine.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
@@ -182,7 +182,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ Horizontal Split",
+    "title": "Transit Board Horizontal Split",
     "application_id": "tbdhorizontal",
     "_id": "tbdhorizontal",
     "url_template": "http://transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
@@ -255,7 +255,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ Vertical Split",
+    "title": "Transit Board Vertical Split",
     "application_id": "tbdvertical",
     "_id": "tbdvertical",
     "fields": [
@@ -577,7 +577,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board™ Horizontal Split (development version)",
+    "title": "Transit Board Horizontal Split (development version)",
     "application_id": "tbdhorizontal_dev",
     "_id": "tbdhorizontal_dev",
     "templates": [
@@ -641,7 +641,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Transit Board Vertical Split, development version",
+    "title": "Transit Board Vertical Split (development)",
     "application_id": "tbdvertical_dev",
     "_id": "tbdvertical_dev",
     "fields": [
