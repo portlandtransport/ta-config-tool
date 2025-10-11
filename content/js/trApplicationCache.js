@@ -241,7 +241,76 @@ var trStoredApplications = [
     ]
   },
   
+ 
+ 
+  {
+    "_rev": "9-fff5fde848b5dc7a0773abf457807307",
+    "description": "Displays arrivals grouped by transit line, with additional info on the right",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Transit Board™ Vertical Split",
+    "application_id": "tbdvertical",
+    "_id": "tbdvertical",
+    "fields": [
+     
+      {
+        "advice": "Number of pages to rotate through",
+        "label": "Number of Pages:",
+        "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E"
+      },
+      {
+        "advice": "Seconds of delay between pages",
+        "label": "Page Delay:",
+        "html": "\u003Cinput type='text' name='page_delay' value='15' size='5'\u003E"
+      },
+      {
+        "advice": "Suppress display of arrivals that include the string \"Downtown Only\"",
+        "label": "Suppress \"Downtown Only\" arrivals:",
+        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E"
+      },
+      {
+        "advice": "Will cause the display to reload its configuration at the next status update interval",
+        "label": "Reset:",
+        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
+      },
+      {
+        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
+        "label": "Screen Margins:",
+        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E"
+      },
+      {
+        "advice": "Horizontal portion of screen devoted to transit display (100 means no other info)",
+        "label": "Screen Split:",
+        "html": "\u003Cinput type='text' class='splitpct' id='splitpct' name='splitpct' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.splitpct').SpinButton({min:2,max:100,step: 1 });});\u003C/script\u003E"
+      },
+      {
+        "advice": "URL path to html page to be shown on right hand side of display",
+        "label": "Supplemental Info URL:",
+        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      }
+    ],
+    "templates": [
+      {
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://transitappliance.com/apps/transitBoardVertical/transitBoardVertical.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      },
+      {
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/transitBoardVertical/transitBoardVertical.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
+      }
+    ],
+    "url_template": "http://transitappliance.com/apps/transitBoardVertical/transitBoardVertical.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}"
+  },
+
   { "spacer":true},
+  // secondary apps
  
   {
     "_rev": "2-d2497c0861c33f36723140e36abc04f5",
@@ -312,6 +381,44 @@ var trStoredApplications = [
       }
     ]
   },
+  {
+    "templates": [
+      {
+        "app_url": "http://trimet.org/onsite/multi_stop_arrivals.html?locationIDs={eval}var stop_list = new Array;for (var stop_id in stops['TriMet']) {stop_list.push(stop_id)}; return stop_list.join(','){/eval}&${application.simple_option_string}&Route=true",
+        "img_url": "http://trimet.org/onsite/images/tm-logo.png"
+      }
+    ],
+    "_rev": "8-e099be0c6ff270878a2532d908a80e3e",
+    "url_template": "http://trimet.org/onsite/multi_stop_arrivals.html?locationIDs={eval}var stop_list = new Array;for (var stop_id in stops['TriMet']) {stop_list.push(stop_id)}; return stop_list.join(','){/eval}&${application.simple_option_string}&Route=true",
+    "description": "Similar to the displays on the Transit Mall",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "TriMet Javascript Display",
+    "application_id": "trimet",
+    "form": "\u003Ctr\u003E\u003Ctd\u003EPage Delay:\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' name='pagedelay' value='1'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003EScroll Speed:\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' name='scrollSpeed' value='7'\u003E\u003C/td\u003E\u003C/tr\u003E",
+    "_id": "trimet",
+    "fields": [
+      {
+        "advice": "",
+        "label": "Page Delay:",
+        "html": "\u003Cinput type='text' name='pagedelay' value='1'\u003E"
+      },
+      {
+        "advice": "",
+        "label": "Scroll Speed:",
+        "html": "\u003Cinput type='text' name='scrollSpeed' value='7'\u003E"
+      }
+    ]
+  },
+
+  {
+    "spacer": true
+    // development
+  },
+
+
   {
     "_rev": "2-882cf8587e8f3560aa295a1ace073dda",
     "description": "Displays arrivals grouped by transit line, with additional info on the right",
@@ -475,72 +582,6 @@ var trStoredApplications = [
       }
     ]
   },
- 
-  {
-    "_rev": "9-fff5fde848b5dc7a0773abf457807307",
-    "description": "Displays arrivals grouped by transit line, with additional info on the right",
-    "agencies": [
-      "TriMet",
-      "Portland Streetcar"
-    ],
-    "title": "Transit Board™ Vertical Split",
-    "application_id": "tbdvertical",
-    "_id": "tbdvertical",
-    "fields": [
-     
-      {
-        "advice": "Number of pages to rotate through",
-        "label": "Number of Pages:",
-        "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E"
-      },
-      {
-        "advice": "Seconds of delay between pages",
-        "label": "Page Delay:",
-        "html": "\u003Cinput type='text' name='page_delay' value='15' size='5'\u003E"
-      },
-      {
-        "advice": "Suppress display of arrivals that include the string \"Downtown Only\"",
-        "label": "Suppress \"Downtown Only\" arrivals:",
-        "html": "\u003Cinput type='checkbox' name='suppress_downtown_only' value='1'\u003E"
-      },
-      {
-        "advice": "Will cause the display to reload its configuration at the next status update interval",
-        "label": "Reset:",
-        "html": "\u003Cinput type='checkbox' name='reset_config' value='1'\u003E"
-      },
-      {
-        "advice": "Some displays, particularly HDTVs, may display some content outside the visible area.\u003Cbr\u003EThese options allow you to add margins to any edge of the display to adjust for this.",
-        "label": "Screen Margins:",
-        "html": "\u003Ctable class='transparent_table'\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='top' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='left' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='right' value='0' size='5'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003E\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' class='margin-spin' name='bottom' value='0' size='5'\u003E\u003C/td\u003E\u003Ctd\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cscript\u003E$(document).ready(function() {$('.margin-spin').SpinButton({min:0,max:50,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "Horizontal portion of screen devoted to transit display (100 means no other info)",
-        "label": "Screen Split:",
-        "html": "\u003Cinput type='text' class='splitpct' id='splitpct' name='splitpct' value='100' size='5'\u003E\u003Cscript\u003E$(document).ready(function() {$('.splitpct').SpinButton({min:2,max:100,step: 1 });});\u003C/script\u003E"
-      },
-      {
-        "advice": "URL path to html page to be shown on right hand side of display",
-        "label": "Supplemental Info URL:",
-        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
-      },
-      {
-        "advice": "Leave empty unless you know what this is for!",
-        "label": "Expert Options",
-        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
-      }
-    ],
-    "templates": [
-      {
-        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
-        "app_url": "http://transitappliance.com/apps/transitBoardVertical/transitBoardVertical.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
-      },
-      {
-        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/transitBoardVertical/transitBoardVertical.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}",
-        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png"
-      }
-    ],
-    "url_template": "http://transitappliance.com/apps/transitBoardVertical/transitBoardVertical.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}"
-  },
   {
     "_rev": "1-60ff7f6b0f1c422acff6eca51d8f2f07",
     "description": "Displays arrivals grouped by transit line, with additional info on the right",
@@ -597,37 +638,7 @@ var trStoredApplications = [
     ]
   },
   
-  {
-    "templates": [
-      {
-        "app_url": "http://trimet.org/onsite/multi_stop_arrivals.html?locationIDs={eval}var stop_list = new Array;for (var stop_id in stops['TriMet']) {stop_list.push(stop_id)}; return stop_list.join(','){/eval}&${application.simple_option_string}&Route=true",
-        "img_url": "http://trimet.org/onsite/images/tm-logo.png"
-      }
-    ],
-    "_rev": "8-e099be0c6ff270878a2532d908a80e3e",
-    "url_template": "http://trimet.org/onsite/multi_stop_arrivals.html?locationIDs={eval}var stop_list = new Array;for (var stop_id in stops['TriMet']) {stop_list.push(stop_id)}; return stop_list.join(','){/eval}&${application.simple_option_string}&Route=true",
-    "description": "Similar to the displays on the Transit Mall",
-    "agencies": [
-      "TriMet",
-      "Portland Streetcar"
-    ],
-    "title": "TriMet Javascript Display",
-    "application_id": "trimet",
-    "form": "\u003Ctr\u003E\u003Ctd\u003EPage Delay:\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' name='pagedelay' value='1'\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd\u003EScroll Speed:\u003C/td\u003E\u003Ctd\u003E\u003Cinput type='text' name='scrollSpeed' value='7'\u003E\u003C/td\u003E\u003C/tr\u003E",
-    "_id": "trimet",
-    "fields": [
-      {
-        "advice": "",
-        "label": "Page Delay:",
-        "html": "\u003Cinput type='text' name='pagedelay' value='1'\u003E"
-      },
-      {
-        "advice": "",
-        "label": "Scroll Speed:",
-        "html": "\u003Cinput type='text' name='scrollSpeed' value='7'\u003E"
-      }
-    ]
-  },
+
   {
     "templates": [
       {
