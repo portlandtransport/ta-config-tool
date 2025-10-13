@@ -421,6 +421,37 @@ var trStoredApplications = [
       }
     ]
   },
+   {
+    "description": "Displays arrivals grouped by transit line, with additional info on the right",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Redirect (development)",
+    "application_id": "redirect_dev",
+    "_id": "redirect_dev",
+    "templates": [
+      {
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://transitappliance.com/apps/redirect/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      },
+     {
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/redirect/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+    ],
+    "url_template": "http://transitappliance.com/apps/redirect/app.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "fields": [
+     
+
+      {
+        "label": "Redirect Configuration ID:",
+        "advice": "Identifier for configuration to redirect to",
+        "html": "\u003Cinput type='text' name='redirect' value='' size='45'\u003E"
+      }
+
+    ]
+  },
 
   {
     "spacer": true,
