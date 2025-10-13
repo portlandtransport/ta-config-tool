@@ -427,9 +427,9 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Redirect (development)",
-    "application_id": "redirect_dev",
-    "_id": "redirect_dev",
+    "title": "Redirect",
+    "application_id": "redirect",
+    "_id": "redirect",
     "templates": [
       {
         "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
