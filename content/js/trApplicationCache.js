@@ -849,7 +849,8 @@ var trStoredApplications = [
       {
         "label": "Image URL:",
         "advice": "Image to be fit",
-        "html": "<input type='text' name='image_url' value='' size='45'>"
+        "html": "<input type='text' name='image_url' value='' size='45'>",
+        "encode": true
       },
       {
         "label": "Direction:",
