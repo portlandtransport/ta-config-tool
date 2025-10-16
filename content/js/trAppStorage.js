@@ -78,6 +78,9 @@ function trAppStoreConfiguration() {
 
 function trAppFormatURLs(application,config) {
 	console.log(application);
+	if (typeof application.fields_to_encode != "object") {
+		application.fields_to_encode = {};
+	}
 				
 	if (config.public.stops != undefined && config.public.application != undefined && config.public.application.id != undefined && config.public.application.options != undefined) {
 		// populate all the config values we will need
