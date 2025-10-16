@@ -850,7 +850,6 @@ var trStoredApplications = [
         "label": "Image URL:",
         "advice": "Image to be fit",
         "html": "<input type='text' name='image_url' value='' size='45'>",
-        "encode": true
       },
       {
         "label": "Direction:",
@@ -863,7 +862,8 @@ var trStoredApplications = [
         "html": "<input type='text' name='background_color' value='#FFFFFF' size='45'>"
       }
 
-    ]
+    ],
+    "fields_to_encode": {"image_url": true}
   },
  
 ];
