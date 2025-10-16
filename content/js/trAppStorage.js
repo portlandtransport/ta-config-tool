@@ -97,8 +97,12 @@ function trAppFormatURLs(application,config) {
 		for (var i = 0; i < config.public.application.options.length; i++){ 
 			var option = config.public.application.options[i]; 
 			console.log(config.public.application.options[i]);
-			option_name_value_pair_array.push(option.name+"="+option.value);
-			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
+			var value = option.value
+			if (application.fields_to_encode[option.name]) {
+				value = encodeURIComponent(value);
+			}
+			option_name_value_pair_array.push(option.name+"="+value);
+			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+value);
 		} 
 
 		var parentid = trAppParentId(config.private.id);
