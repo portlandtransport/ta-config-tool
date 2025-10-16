@@ -92,6 +92,7 @@ function trAppFormatURLs(application,config) {
 		}
 		for (var i = 0; i < config.public.application.options.length; i++){ 
 			var option = config.public.application.options[i]; 
+			console.log(config.public.application.options[i]);
 			option_name_value_pair_array.push(option.name+"="+option.value);
 			fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
 		} 
