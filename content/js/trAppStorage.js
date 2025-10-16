@@ -99,6 +99,7 @@ function trAppFormatURLs(application,config) {
 			console.log(config.public.application.options[i]);
 			var value = option.value
 			if (application.fields_to_encode[option.name]) {
+				console.log("encoding "+option.name);
 				value = encodeURIComponent(value);
 			}
 			option_name_value_pair_array.push(option.name+"="+value);
