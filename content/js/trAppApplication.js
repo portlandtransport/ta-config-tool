@@ -186,6 +186,10 @@ function trAppBuildURL() {
 		if (application_data != undefined) {
 		
 	  	var url_template = application_data.url_template;
+
+		if (typeof application_data.fields_to_encode != "object") {
+			application_data.fields_to_encode = {};
+		}
 	  	
 	  	if (url_template != undefined) {
 	  	
@@ -206,9 +210,13 @@ function trAppBuildURL() {
 					trApp.current_appliance.public.application.options = [];
 				}
 				for (var i = 0; i < trApp.current_appliance.public.application.options.length; i++){ 
-			  	var option = trApp.current_appliance.public.application.options[i]; 
-			  	option_name_value_pair_array.push(option.name+"="+option.value);
-			  	fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+option.value);
+					var option = trApp.current_appliance.public.application.options[i]; 
+					var value = option.value;
+					if (application_data.fields_to_encode[option.name]) {
+						value = encodeURIComponent(value);
+					}
+					option_name_value_pair_array.push(option.name+"="+value);
+					fully_qualified_option_name_value_pair_array.push("option["+option.name+"]="+value);
 				} 
 
 				option_name_value_pair_array.push("nickname="+encodeURIComponent(trApp.current_appliance.private.nickname));

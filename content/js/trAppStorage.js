@@ -97,7 +97,7 @@ function trAppFormatURLs(application,config) {
 		for (var i = 0; i < config.public.application.options.length; i++){ 
 			var option = config.public.application.options[i]; 
 			console.log(config.public.application.options[i]);
-			var value = option.value
+			var value = option.value;
 			if (application.fields_to_encode[option.name]) {
 				console.log("encoding "+option.name);
 				value = encodeURIComponent(value);
