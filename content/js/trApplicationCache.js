@@ -863,7 +863,7 @@ var trStoredApplications = [
       }
 
     ],
-    "fields_to_encode": {"image_url": true}
+    "fields_to_encode": {"image_url": true, "background_color": true}
   },
  
 ];
