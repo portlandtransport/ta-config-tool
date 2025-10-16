@@ -77,7 +77,7 @@ function trAppStoreConfiguration() {
 }
 
 function trAppFormatURLs(application,config) {
-	console.log(application);
+
 	if (typeof application.fields_to_encode != "object") {
 		application.fields_to_encode = {};
 	}
