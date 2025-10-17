@@ -452,6 +452,46 @@ var trStoredApplications = [
 
     ]
   },
+  {
+    "description": "Displays cropped or padded image fit to other dimension",
+    "agencies": [
+    ],
+    "title": "Image Fit",
+    "application_id": "image_fit",
+    "_id": "image_fit",
+    "templates": [
+      {
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://transitappliance.com/apps/imageFit/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      },
+     {
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/imageFit/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+    ],
+    "url_template": "http://transitappliance.com/apps/imageFit/app.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "fields": [
+     
+
+      {
+        "label": "Image URL:",
+        "advice": "Image to be fit",
+        "html": "<input type='text' name='image_url' value='' size='45'>",
+      },
+      {
+        "label": "Direction:",
+        "advice": "Direction of fit, other direction will be cropped or padded as necessary",
+        "html": "<input type='radio' name='direction' value='horizontal' checked='checked'> Horizontal <input type='radio' name='direction' value='vertical'> Vertical",
+      },
+      {
+        "label": "Background Color:",
+        "advice": "Background color for any padded area",
+        "html": "<input type='text' name='background_color' value='#FFFFFF' size='45'>"
+      }
+
+    ],
+    "fields_to_encode": {"image_url": true, "background_color": true}
+  },
 
   {
     "spacer": true,
