@@ -198,8 +198,8 @@ var trStoredApplications = [
     ],
     "fields": [
       {
-        "html": "<input type='checkbox' name='abcb' value='0'\>",
-        "label": "ABCB Patter:",
+        "html": "<input type='checkbox' name='abcb' value='1'\>",
+        "label": "ABCB Pattern:",
         "advice": "Overrides number of pages, requires exactly 3 configurations"
       },
       {
@@ -664,8 +664,8 @@ var trStoredApplications = [
     "url_template": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
     "fields": [
       {
-        "html": "<input type='checkbox' name='abcb' value='0'\>",
-        "label": "ABCB Patter:",
+        "html": "<input type='checkbox' name='abcb' value='1'\>",
+        "label": "ABCB Pattern:",
         "advice": "Overrides number of pages, requires exactly 3 configurations"
       },
       {
