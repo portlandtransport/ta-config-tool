@@ -197,7 +197,11 @@ var trStoredApplications = [
       }
     ],
     "fields": [
-
+      {
+        "html": "<input type='checkbox' name='abcb' value='0'\>",
+        "label": "ABCB Patter:",
+        "advice": "Overrides number of pages, requires exactly 3 configurations"
+      },
       {
         "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E",
         "advice": "Number of pages to rotate through",
@@ -659,7 +663,11 @@ var trStoredApplications = [
     ],
     "url_template": "http://dev.transitappliance.com/apps/transitBoardHorizontal/transitBoardHorizontal.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
     "fields": [
-     
+      {
+        "html": "<input type='checkbox' name='abcb' value='0'\>",
+        "label": "ABCB Patter:",
+        "advice": "Overrides number of pages, requires exactly 3 configurations"
+      },
       {
         "html": "\u003Cinput type='text' name='num_pages' value='1' size='5'\u003E",
         "advice": "Number of pages to rotate through",
