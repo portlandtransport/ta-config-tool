@@ -496,6 +496,43 @@ var trStoredApplications = [
     ],
     "fields_to_encode": {"image_url": true, "background_color": true}
   },
+   {
+    "_rev": "2-d2497c0861c33f36723140e36abc04f5",
+    "description": "Message",
+    "agencies": [
+      "TriMet",
+      "Portland Streetcar"
+    ],
+    "title": "Message Pane",
+    "application_id": "message",
+    "_id": "message",
+    "fields": [
+      {
+        "advice": "A full HTML page",
+        "label": "Content URL",
+        "html": "<input name='content_url'>"
+      },
+      {
+        "advice": "Leave empty unless you know what this is for!",
+        "label": "Expert Options",
+        "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
+      }
+    ],
+    "fields_to_encode": {"content_url": true},
+    "url_template": "http://transitappliance.com/apps/message/app.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
+    "templates": [
+      {
+        "img_url": "http://transitappliance.com/apps/assets/img/ping.png",
+        "app_url": "http://transitappliance.com/apps/message/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      },
+      
+      {
+        "img_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/assets/img/ping.png",
+        "app_url": "http://d3e69nqsg1tckh.cloudfront.net/apps/message/app.html?${multi_agency_stop_string}&${application.fully_qualified_option_string}&option[message]=+&appl[id]=${id}&appl[timezone]=${timezone}"
+      }
+        
+    ]
+  },
 
   {
     "spacer": true,
@@ -920,9 +957,9 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Message Pane",
-    "application_id": "message",
-    "_id": "message",
+    "title": "Message (Development)",
+    "application_id": "message_dev",
+    "_id": "message_dev",
     "fields": [
       {
         "advice": "A full HTML page",
