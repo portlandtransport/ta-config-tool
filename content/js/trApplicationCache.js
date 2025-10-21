@@ -935,7 +935,7 @@ var trStoredApplications = [
         "html": "\u003Ctextarea name='expert' cols='30' rows='3'\u003E\u003C/textarea\u003E"
       }
     ],
-    "fields_to_encode": {"content_url": true}
+    "fields_to_encode": {"content_url": true},
     "url_template": "http://dev.transitappliance.com/apps/message/app.html?appl[id]=${id}&appl[timezone]=${timezone}&${multi_agency_stop_string}&${application.fully_qualified_option_string}",
     "templates": [
       {
