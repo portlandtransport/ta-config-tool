@@ -503,7 +503,7 @@ var trStoredApplications = [
       "TriMet",
       "Portland Streetcar"
     ],
-    "title": "Message Pane",
+    "title": "Message",
     "application_id": "message",
     "_id": "message",
     "fields": [
