@@ -77,7 +77,12 @@ var trStoredApplications = [
       {
         "html": "\u003Cinput type='radio' name='show_weather' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_weather' value='top'\u003E Top \u003Cinput type='radio' name='show_weather' value='bottom'\u003E Bottom",
         "label": "Include weather:",
-        "advice": "Also requires setting up API key separately"
+        "advice": ""
+      },
+      {
+        "html": "\u003Cinput type='radio' name='show_aqi' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_aqi' value='top'\u003E Top \u003Cinput type='radio' name='show_aqi' value='bottom'\u003E Bottom",
+        "label": "Include air quality:",
+        "advice": ""
       },
       {
         "html": "\u003Cinput type='text' name='car2go' value='0' size='5'\u003E",
@@ -584,10 +589,15 @@ var trStoredApplications = [
         "html": "\u003Cinput type='text' name='stylesheet' value='' size='45'\u003E",
         "label": "Stylesheet:"
       },
-      {
-        "label": "Include weather:",
+       {
         "html": "\u003Cinput type='radio' name='show_weather' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_weather' value='top'\u003E Top \u003Cinput type='radio' name='show_weather' value='bottom'\u003E Bottom",
-        "advice": "Also requires setting up API key separately"
+        "label": "Include weather:",
+        "advice": ""
+      },
+      {
+        "html": "\u003Cinput type='radio' name='show_aqi' value='0' checked='checked'\u003E None \u003Cinput type='radio' name='show_aqi' value='top'\u003E Top \u003Cinput type='radio' name='show_aqi' value='bottom'\u003E Bottom",
+        "label": "Include air quality:",
+        "advice": ""
       },
       {
         "html": "\u003Cinput type='text' name='car2go' value='0' size='5'\u003E",
