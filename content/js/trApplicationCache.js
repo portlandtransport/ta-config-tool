@@ -239,7 +239,7 @@ var trStoredApplications = [
       },
       {
         "label": "Supplemental Info URL:",
-        "html": "\u003Cinput type='textarea' name='suppl_url' value='' cols='30' rows='1'\u003E",
+        "html": "<textarea name='suppl_url' value='' cols='30' rows='1'></textarea>",,
         "advice": "URL path to html page to be shown on right hand side of display"
       },
       {
@@ -302,7 +302,7 @@ var trStoredApplications = [
       {
         "advice": "URL path to html page to be shown on right hand side of display",
         "label": "Supplemental Info URL:",
-        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
+        "html": "<textarea name='suppl_url' value='' cols='30' rows='1'></textarea>",
       },
       {
         "advice": "Leave empty unless you know what this is for!",
@@ -349,7 +349,7 @@ var trStoredApplications = [
       {
         "advice": "URL of image file to display - populate this OR Content URL, not both.",
         "label": "Image URL",
-        "html": "\u003Cinput name='image_url'\u003E"
+        "html": "<textarea name='image_url' cols='30' rows='1'></textarea>"
       },
       {
         "advice": "Leave empty unless you know what this is for!",
@@ -485,7 +485,7 @@ var trStoredApplications = [
       {
         "label": "Image URL:",
         "advice": "Image to be fit",
-        "html": "<input type='text' name='image_url' value='' size='45'>",
+        "html": "<textarea name='image_url' cols='30' rows='1'></textarea>",
       },
       {
         "label": "Direction:",
@@ -743,7 +743,7 @@ var trStoredApplications = [
       {
         "label": "Supplemental Info URL:",
         "advice": "URL path to html page to be shown on right hand side of display",
-        "html": "\u003Cinput type='textarea' name='suppl_url' value='' cols='30' rows='1'\u003E",
+        "html": "<textarea name='suppl_url' value='' cols='30' rows='1'></textarea>",
       },
       {
         "advice": "Leave empty unless you know what this is for!",
@@ -944,7 +944,7 @@ var trStoredApplications = [
       {
         "label": "Image URL:",
         "advice": "Image to be fit",
-        "html": "<input type='text' name='image_url' value='' size='45'>",
+        "html": "<textarea name='image_url' cols='30' rows='1'></textarea>",
       },
       {
         "label": "Direction:",
