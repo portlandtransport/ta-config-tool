@@ -239,7 +239,7 @@ var trStoredApplications = [
       },
       {
         "label": "Supplemental Info URL:",
-        "html": "<textarea name='suppl_url' value='' cols='30' rows='1'></textarea>",,
+        "html": "<textarea name='suppl_url' value='' cols='30' rows='1'></textarea>",
         "advice": "URL path to html page to be shown on right hand side of display"
       },
       {
