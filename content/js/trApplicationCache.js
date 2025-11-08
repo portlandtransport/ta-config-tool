@@ -239,7 +239,7 @@ var trStoredApplications = [
       },
       {
         "label": "Supplemental Info URL:",
-        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E",
+        "html": "\u003Cinput type='textarea' name='suppl_url' value='' cols='30' rows='1'\u003E",
         "advice": "URL path to html page to be shown on right hand side of display"
       },
       {
@@ -743,7 +743,7 @@ var trStoredApplications = [
       {
         "label": "Supplemental Info URL:",
         "advice": "URL path to html page to be shown on right hand side of display",
-        "html": "\u003Cinput type='text' name='suppl_url' value='' size='45'\u003E"
+        "html": "\u003Cinput type='textarea' name='suppl_url' value='' cols='30' rows='1'\u003E",
       },
       {
         "advice": "Leave empty unless you know what this is for!",
