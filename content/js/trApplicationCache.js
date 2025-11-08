@@ -344,7 +344,7 @@ var trStoredApplications = [
       {
         "advice": "A full HTML page - populate this OR Image URL, not both.",
         "label": "Content URL",
-        "html": "\u003Cinput name='content_url'\u003E"
+        "html": "<textarea name='content_url' cols='30' rows='1'></textarea>"
       },
       {
         "advice": "URL of image file to display - populate this OR Content URL, not both.",
@@ -515,7 +515,7 @@ var trStoredApplications = [
       {
         "advice": "A full HTML page",
         "label": "Content URL",
-        "html": "<input name='content_url'>"
+        "html": "<textarea name='content_url' cols='30' rows='1'></textarea>"
       },
       {
         "advice": "Leave empty unless you know what this is for!",
@@ -974,7 +974,7 @@ var trStoredApplications = [
       {
         "advice": "A full HTML page",
         "label": "Content URL",
-        "html": "<input name='content_url'>"
+        "html": "<textarea name='content_url' cols='30' rows='1'></textarea>"
       },
       {
         "advice": "Leave empty unless you know what this is for!",
